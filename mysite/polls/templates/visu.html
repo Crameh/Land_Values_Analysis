@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Visualisation</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;"> Visualisation des données sur les valeurs foncières </h1>
+
+        <form action="apply_Model">
+            <label for="model-select">Chose a model :</label>
+            <select name="model" id="model-select" onchange="if(this.value !=0) {this.form.submit()}">
+                <option value="0">--Choisir une donnée--</option>
+                <option value="surface">Surface</option>
+                <option value="btq">B/T/Q</option>
+                <option value="type_voie">Type de voie</option>
+                <option value="nature_mutation">Nature de la mutation</option>
+                <option value="departement">Département</option>
+                <option value="nb_lot">Nombre de lots</option>
+                <option value="type_local">Type de local</option>
+                <option value="date">Date de mutation</option>
+                <option value="nb_pieces">Nombre de pièces principales</option>
+                <option value="comparaison">Comparaison sur 5 ans</option>
+            </select>
+        </form>
+        
+        <div style="border:1px solid burlywood; margin-top:20px">
+            <div id = "plot" style="margin-left:25%">
+                {% for plot in plot_list %}
+                    {{plot|safe}}
+                {% endfor %}
+            </div>
+            <p>
+
+            </p>
+        </div>
+
+        
+
+    </body>
+</html>
